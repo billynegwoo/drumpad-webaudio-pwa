@@ -178,16 +178,15 @@ section div.pad.pad-purple div.pad-c i {
 
 #time .times-wrapper {
   display: block;
-  width: 50%;
+  width: 80%;
+  height: 80%;
   margin: auto;
-  transform: translateY(-50%);
   position: relative;
-  top: 45%;
 }
 
 #time .time {
   width: 25%;
-  height: 50px;
+  height: 25%;
   display: inline-block;
   float: left;
   padding: 5px;

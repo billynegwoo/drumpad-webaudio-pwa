@@ -72,9 +72,6 @@ var resizePad = function () {
   $('section div.pad').css({
     height: (window.innerHeight - $('menu').height()) / 4
   });
-  $('#time div.time').css({
-    height: $('#time div.time').width()
-  });
 };
 
 $(window).on('resize', resizePad);
@@ -107,7 +104,8 @@ Waves.init();
 $('section div.pad div.pad-c').click(function() {
   if (waitingTime) {
     timeOpen = true;
-    currentPad = $('section div.pad div').index(this);
+    currentPad = $('section div.pad div.pad-c').index(this);
+    console.log(currentPad);
     $('#time div.time').each(function(i) {
       if (pads[currentPad][i]) {
         $(this).addClass('active');
@@ -118,7 +116,7 @@ $('section div.pad div.pad-c').click(function() {
     $('.pad-number').text(currentPad + 1);
     $('#time').css('transform', 'translateX(0%)');
   } else {
-    playSound(sounds[$('section div.pad div').index(this)], 0);
+    playSound(sounds[$('section div.pad div.pad-c').index(this)], 0);
   }
 });
 
@@ -137,8 +135,8 @@ $('#time div.time').click(function() {
 });
 
  setInterval(function() {
-   $('menu .timer').finish().css('width', '0%');
-   $('menu .timer').animate({width: '105%'}, 4000, 'linear');
+   //$('menu .timer').finish().css('width', '0%');
+   //$('menu .timer').animate({width: '105%'}, 4000, 'linear');
    var startTime = audioContext.currentTime;
    for (var i = 0, len = pads.length; i < len; i++) {
      for (var o = 0, lenO = pads[i].length; o < lenO; o++) {
