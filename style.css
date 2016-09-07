@@ -36,6 +36,7 @@ menu ul {
 }
 
 menu ul li {
+  opacity: 0.5;
   list-style-type: none;
   color: white;
   display: inline-block;
